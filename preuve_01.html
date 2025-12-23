@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSTP - ACCÈS FICHIER #0811</title>
+    <style>
+        /* Fond sombre pour faire ressortir le document */
+        body { 
+            background-color: #121212; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Conteneur du mémo (l'image) */
+        .document-container {
+            position: relative;
+            max-width: 800px;
+            width: 90%;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.7);
+            border: 1px solid #333;
+        }
+
+        .memo-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Petit effet de grain/bruit sur le document */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/p6.png');
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document-container">
+        <img src="memo.jpg" alt="DOCUMENT SCANNE - CLASSIFIE" class="memo-image">
+        <div class="overlay"></div>
+    </div>
+
+    </body>
+</html>
