@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REKNAH</title>
     <style>
-        /* Configuration de la page : Noir total, pas de scroll */
         body { 
             background-color: #000; 
             color: #fff; 
@@ -19,31 +18,22 @@
             overflow: hidden;
         }
         
-        /* Conteneur de l'image pour gérer le halo et le clic */
         .rabbit-container {
             position: relative;
-            width: 250px; /* Ajuste la taille selon ton image */
+            width: 250px;
             height: 250px;
-            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: transform 0.3s ease;
-        }
-
-        .rabbit-container:hover {
-            transform: scale(1.05); /* Petit effet de zoom au survol */
         }
 
         .rabbit-img {
             width: 100%;
             height: auto;
-            image-rendering: pixelated; /* Garde les pixels nets */
-            z-index: 2; /* Passe devant le halo */
-            position: relative;
+            image-rendering: pixelated;
+            z-index: 2;
         }
 
-        /* Le halo lumineux blanc qui pulse */
         .halo {
             position: absolute;
             width: 300px;
@@ -52,7 +42,7 @@
             border-radius: 50%;
             z-index: 1;
             animation: pulse 3s infinite ease-in-out;
-            pointer-events: none; /* Le clic traverse le halo pour toucher le lien */
+            pointer-events: none;
         }
 
         @keyframes pulse {
@@ -61,33 +51,33 @@
             100% { opacity: 0.2; transform: scale(0.85); }
         }
 
-        /* La phrase sous l'image */
         .instruction { 
             margin-top: 60px; 
             font-size: 1rem;
             letter-spacing: 4px; 
-            color: #444; /* Gris sombre pour le mystère */
+            color: #444; 
             text-transform: uppercase;
             text-align: center;
         }
 
-        /* Supprime le style par défaut du lien */
-        a { 
-            text-decoration: none; 
-            outline: none;
+        /* Le point final magique */
+        .secret-link {
+            text-decoration: none;
+            color: inherit;
+            cursor: default; /* Empêche le curseur de devenir une main */
         }
     </style>
 </head>
 <body>
 
-    <a href="preuve_01.html">
-        <div class="rabbit-container">
-            <div class="halo"></div>
-            <img src="lapin.jpg" class="rabbit-img" alt="[Image de lapin]">
-        </div>
-    </a>
+    <div class="rabbit-container">
+        <div class="halo"></div>
+        <img src="lapin.jpg" class="rabbit-img" alt="[Image de lapin]">
+    </div>
 
-    <p class="instruction">Trouve l'entrée du terrier</p>
+    <p class="instruction">
+        Trouve l'entrée du terrier<a href="preuve_01.html" class="secret-link">.</a>
+    </p>
 
-</body>
+    </body>
 </html>
