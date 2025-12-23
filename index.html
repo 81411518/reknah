@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REKNAH</title>
+    <style>
+        /* Configuration de la page : Noir total, pas de scroll */
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: 'Courier New', monospace; 
+            margin: 0; 
+            overflow: hidden;
+        }
+        
+        /* Conteneur de l'image pour gérer le halo et le clic */
+        .rabbit-container {
+            position: relative;
+            width: 250px; /* Ajuste la taille selon ton image */
+            height: 250px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .rabbit-container:hover {
+            transform: scale(1.05); /* Petit effet de zoom au survol */
+        }
+
+        .rabbit-img {
+            width: 100%;
+            height: auto;
+            image-rendering: pixelated; /* Garde les pixels nets */
+            z-index: 2; /* Passe devant le halo */
+            position: relative;
+        }
+
+        /* Le halo lumineux blanc qui pulse */
+        .halo {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 45%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+            animation: pulse 3s infinite ease-in-out;
+            pointer-events: none; /* Le clic traverse le halo pour toucher le lien */
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.2; transform: scale(0.85); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+            100% { opacity: 0.2; transform: scale(0.85); }
+        }
+
+        /* La phrase sous l'image */
+        .instruction { 
+            margin-top: 60px; 
+            font-size: 1rem;
+            letter-spacing: 4px; 
+            color: #444; /* Gris sombre pour le mystère */
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Supprime le style par défaut du lien */
+        a { 
+            text-decoration: none; 
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="preuve_01.html">
+        <div class="rabbit-container">
+            <div class="halo"></div>
+            <img src="lapin.jpg" class="rabbit-img" alt="[Image de lapin]">
+        </div>
+    </a>
+
+    <p class="instruction">Trouve l'entrée du terrier</p>
+
+</body>
+</html>
